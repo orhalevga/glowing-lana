@@ -73,9 +73,10 @@ void thread_return()
 	//push eax - return value always will be at eax register
 	//call thread_exit
 }
-/*Scheduler*/
+
+/* Scheduler */
 void scheduler (int signal_num){
-	/*save current thread state - we dont need to do it becuse it saved automaticlly by the OS
+	/* save current thread state - we dont need to do it becuse it saved automaticlly by the OS
 	 * choose thread to run
 	 * restoring the state of the thread we choose to run - we dont need to do it becuse it restored by the OS*/
 }
