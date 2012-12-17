@@ -26,9 +26,8 @@ static struct thread thread_list[MAX_THREADS];
 int thread_create(thread_t *thread_id, void *(*start_routine)(void *), void *arg){
 	
 	/* find place in array
-	 * initalize data structure with parameters.
-	 * go back to scheduler
-	 * 
+	 * put id in *thread_id.
+	 * go back to scheduler? / just return?
 	 */
 	
 	return 0;
