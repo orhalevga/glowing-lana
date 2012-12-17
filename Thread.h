@@ -24,14 +24,14 @@
 /*Thread struct*/
 typedef struct{	
 	int id;
-	void* stack;
+	stack_t stack;
 	void* func;
 	void* ret_val;
-	int state;
-} thread;
+	int status;
+} thread_t;
 
 /*Thread operations*/
-int thread_create(thread_t *thread_id, void *(*start_routine)(void *), void *arg);
+int thread_create(thread_t* thread_id, void *(*start_routine)(void *), void *arg);
 void thread_exit(void *return_value);
 int thread_join(int thread_id, void **return_value_ptr);
 void thread_return();

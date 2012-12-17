@@ -14,16 +14,22 @@
 #include "Mutex.h" 
 
 //save current thread 
-static int curr_thread
+static int curr_thread;
 
 //number of living threads -1 for main
-static int threads_num = 1; 
+//static int threads_num = 1; 
 
 //list of threads
 static struct thread thread_list[MAX_THREADS];
 
 /*Thread operations*/
 int thread_create(thread_t *thread_id, void *(*start_routine)(void *), void *arg){
+	
+	/* find place in array
+	 * initalize data structure with parameters.
+	 * go back to scheduler
+	 * 
+	 */
 	
 	return 0;
 }
@@ -64,8 +70,8 @@ thread_join(int tid, void **return_value_ptr){
 }
 void thread_return()
 {
-		//push eax - return value always will be at eax register
-		//call thread_exit
+	//push eax - return value always will be at eax register
+	//call thread_exit
 }
 /*Scheduler*/
 void scheduler (int signal_num){
