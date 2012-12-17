@@ -15,12 +15,17 @@
 
 //save current thread 
 static int curr_thread
+
 //number of living threads -1 for main
 static int threads_num = 1; 
+
 //list of threads
 static struct thread thread_list[MAX_THREADS];
+
 /*Thread operations*/
 int thread_create(thread_t *thread_id, void *(*start_routine)(void *), void *arg){
+	
+	return 0;
 }
 void thread_exit(void *return_value){
 	/*int idx;
@@ -40,7 +45,8 @@ void thread_exit(void *return_value){
 	}
 	raise(SIGALARM);*/
 }
-int thread_join(int tid, void **return_value_ptr){
+int 
+thread_join(int tid, void **return_value_ptr){
 	/*
 	if (tid < 0 || tid >= threads_num || tid == curr_thread)
 		return -1;
@@ -61,8 +67,8 @@ void thread_return()
 		//push eax - return value always will be at eax register
 		//call thread_exit
 }
-/*Sheduler*/
-void sheduler (int signal_num){
+/*Scheduler*/
+void scheduler (int signal_num){
 	/*save current thread state - we dont need to do it becuse it saved automaticlly by the OS
 	 * choose thread to run
 	 * restoring the state of the thread we choose to run - we dont need to do it becuse it restored by the OS*/
