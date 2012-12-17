@@ -24,7 +24,7 @@ void handler(int signum, siginfo_t* info, void *old_context) {
 	printf("Saved context is at %p\n", old_context);
 
 	ctx = (ucontext_t *)old_context;
-	ctx->uc_mcontext.gregs[REG_EIP] = g;
+	ctx->uc_mcontext.gregs[REG_EIP] = (int)g;
 
 	// When leaving the handler, the restored context will take us to g()
 }
@@ -45,7 +45,10 @@ int main() {
 		perror("Error installing signal handler");
 		exit(-1);
 	}
-	raise(SIGALRM);
+	//raise(SIGALRM);
+	alarm(3);
+	alarm(0);
+	sleep(4);	
 	printf("Exiting through main\n");
 	return 0;
 }
